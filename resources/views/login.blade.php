@@ -136,7 +136,7 @@
             const password = form.password.value;
 
             try {
-                const response = await fetch('/login', {
+                const response = await fetch('/api/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -148,7 +148,7 @@
                 });
                 const data = await response.json();
                 if (data.success) {
-                    window.location.href = '/dashboard';
+                    window.location.href = '/cart';
                 } else {
                     alert('Invalid username or password');
                 }
